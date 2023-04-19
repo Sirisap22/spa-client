@@ -36,22 +36,22 @@
 </script>
 <div class="d-flex justify-content-center align-items-center flex-column">
 
-<h1>System Admin Todo List</h1>
-<div class="input-group mb-3 justify-content-center">
-<input bind:value={newItem} type="text" placeholder="new todo item..">
-<button on:click={addToList} class="btn btn-success">Add</button>
-</div>
+	<h1>System Admin Todo List</h1>
+	<div class="input-group mb-3 justify-content-center">
+		<input bind:value={newItem} type="text" placeholder="new todo item..">
+		<button on:click={addToList} class="btn btn-success">Add</button>
+	</div>
 
-<div>
-<br/>
-{#each todoList as item, index}
-	<input on:click={() => changeStatus(index)} bind:checked={item.status} type="checkbox">
-	<!-- <input bind:checked={item.status} type="checkbox"> -->
-	<span class:checked={item.status}>{item.text}</span>
-	<span on:click={() => removeFromList(index)}>❌</span>
-	<br/>
-{/each} 
-</div>
+	<div>
+		<br/>
+		{#each todoList as item, index}
+			<input on:click={() => changeStatus(index)} bind:checked={item.status} type="checkbox">
+			<!-- <input bind:checked={item.status} type="checkbox"> -->
+			<span class:checked={item.status}>{item.text}</span>
+			<span on:click={() => removeFromList(index)}>❌</span>
+			<br/>
+		{/each} 
+	</div>
 </div>
 
 
